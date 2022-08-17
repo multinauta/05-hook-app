@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const SimpleForm = () => {
 
@@ -16,6 +16,18 @@ export const SimpleForm = () => {
             [ name ]: value
         })
     }
+
+    useEffect( () => {
+        console.log('useEffect called!');
+    }, [])
+
+    useEffect( () => {
+      console.log('formState change');
+    }, [formState])
+
+    useEffect( () => {
+        console.log('email change');
+      }, [email])
 
   return (
     <>
