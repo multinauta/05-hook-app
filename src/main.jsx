@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 //import { CallbackHook } from './06-memos/CallbackHook'
-import { Padre } from './07-tarea-memo/Padre'
+//import { Padre } from './07-tarea-memo/Padre'
 //import { FormWithCustomHook } from './02-useEffect/FormWithCustomHook'
 //import { MultipleCustomHooks } from './03-examples/MultipleCustomHooks'
 //import { FocusScreen } from './04-useRef/FocusScreen'
@@ -12,11 +12,12 @@ import { Padre } from './07-tarea-memo/Padre'
 //import { CounterApp } from './01-useState/CounterApp'
 //import { CounterWithCustomHook } from './01-useState/CounterWithCustomHook'
 //import { HooksApp } from './HooksApp'
-import './08-useReducer/intro-reducer'
+//import './08-useReducer/intro-reducer'
+import { TodoApp } from './08-useReducer/TodoApp'
 import './index.css'
 
-// ReactDOM.createRoot(document.getElementById('root')).render(
+ ReactDOM.createRoot(document.getElementById('root')).render(
 //   <React.StrictMode>
-//     <Padre />
+     <TodoApp />
 //   </React.StrictMode>
-// )
+ )
