@@ -1,26 +1,44 @@
-const initialState = [
-    {
-        id: new Date().getTime(),
-        desc: 'Recoletar la piedra del alma',
-        done: false
+import { useForm } from "../hooks"
+
+
+export const TodoAdd = ( { onNewTodo } ) => {
+
+    const { description , onInputChange, onResetForm } = useForm({
+        description: ''
+    });
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        if ( description.trim().length <= 1 ) return;
+
+        const newTodo = {
+            id: new Date().getTime(),
+            description: description,
+            done: false
+        }
+
+        onNewTodo(newTodo);
+        onResetForm();
+
+
     }
-]
 
 
 
-export const TodoAdd = ( { handleNewTodo } ) => {
     return (
         <>
-            <form>
+            <form onSubmit={ onFormSubmit }>
                 <input
                     type="text"
                     placeholder="¿Qué hay que hacer?"
                     className="form-control"
+                    name="description"
+                    value={ description }
+                    onChange={ onInputChange }
                 />
                 <button
                     type="submit"
                     className="btn btn-outline-primary mt-2 btn-block"
-                    onClick={handleNewTodo(initialState)}
                 >
                     Agregar
                 </button>

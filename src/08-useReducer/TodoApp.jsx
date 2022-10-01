@@ -6,12 +6,12 @@ import { todoReducer } from './todoReducer';
 const initialState = [
     {
         id: new Date().getTime(),
-        desc: 'Recoletar la piedra del alma',
+        description: 'Recoletar la piedra del alma',
         done: false
     },
     {
         id: new Date().getTime() * 3,
-        desc: 'Recoletar la piedra del alma',
+        description: 'Recoletar la piedra del alma',
         done: false
     }
 ]
@@ -36,7 +36,7 @@ export const TodoApp = () => {
                 <div className="col-5">
                     <h4>Agregar TODO</h4>
                     <hr />
-                    <TodoAdd handleNewTodo={ handleNewTodo } />
+                    <TodoAdd onNewTodo={ handleNewTodo } />
                 </div>
             </div>
 
